@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $seo_title; ?>-<?php echo sysconfig('CMS_WEBNAME'); ?></title>
+<meta name="keywords" content="<?php echo $seo_keywords; ?>" />
+<meta name="description" content="<?php echo $seo_description; ?>" />
+<link rel="stylesheet" href="/css/style.min.css" type="text/css" media="all" />
+<link rel="stylesheet" id="font-awesome-css" href="/plugin/font-awesome/css/all.min.css?ver=5.1.1" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery-sidr-css" href="/plugin/sidr/css/jquery.sidr.dark.min.css?ver=2.2.1" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery-slick-css" href="/plugin/slick/slick.min.css?ver=1.5.9" type="text/css" media="all" />
+<link rel="stylesheet" id="start-magazine-style-css" href="/css/style.css?ver=2.0.1" type="text/css" media="all" />
+<script type="text/javascript" src="/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+<script type="text/javascript" src="/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+</head>
+
+<body class="blog global-layout-right-sidebar header-ads-enabled">
+{include file="common/header_top"/}
+<div id="page" class="hfeed site">
+{include file="common/header"/}
+<div id="content" class="site-content">
+	<div class="container">
+		    <div class="inner-wrapper">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<header><h1 class="page-title"><?php echo $title; ?></h1></header>
+
+			<aside id="start-magazine-news-block-3" class="start_magazine_widget_news_block">		
+				<div class="news-block-widget news-block-layout-1 news-block-column-1">
+					<div class="inner-wrapper">
+						<?php if ($list) { foreach ($list as $v) { ?>
+						<div class="news-block-item">
+							<div class="news-block-wrapper">
+								<div class="news-block-thumb">
+									<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>">
+										<img src="<?php echo $v['litpic']; ?>" class="aligncenter" alt="<?php echo $v['title']; ?>" />
+									</a>
+								</div><!-- .news-block-thumb -->
+								<div class="news-block-text-wrap">
+									<div class="news-block-meta entry-meta">
+										<span class="posted-on"><?php echo date('Y-m-d', $v['update_time']); ?></span>
+										<span class="comments-link"><?php echo $v['click']; ?></span>
+									</div><!-- .news-block-meta -->
+									<h3 class="news-block-title">
+										<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a>
+									</h3>
+									<div class="news-block-summary">
+										<p><?php echo mb_strcut($v['description'], 0, 150, 'UTF-8'); ?></p>
+									</div><!-- .news-block-summary -->
+								</div><!-- .news-block-text-wrap -->
+							</div><!-- .news-block-wrapper -->
+						</div><!-- .news-block-item -->
+						<?php } } ?>
+					</div><!-- .inner-wrapper -->
+				</div><!-- .news-block-widget -->
+			</aside>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+<div id="sidebar-primary" class="widget-area sidebar" role="complementary">
+	<div class="sidebar-widget-wrapper">
+		<aside id="start-magazine-recent-posts-extended-2" class="widget start_magazine_widget_recent_posts_extended">
+			<div class="widget-title-wrap"><h2 class="widget-title">大家正在關注</h2></div>						
+			<div class="recent-posts-extended-widget">
+				<?php if ($relate_tuijian_list) { foreach ($relate_tuijian_list as $v) { ?>
+				<div class="recent-posts-extended-item">
+					<div class="recent-posts-extended-thumb">
+						<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>">
+							<img width="150" height="150" src="<?php echo $v['litpic']; ?>" class="alignleft wp-post-image" alt="" style="max-width:90px;" /></a>
+					</div>
+					<div class="recent-posts-extended-text-wrap">
+						<h3 class="recent-posts-extended-title">
+							<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a>
+						</h3>
+						<div class="recent-posts-extended-meta entry-meta">
+							<span class="posted-on"><?php echo date('Y-m-d', $v['update_time']); ?></span>
+						</div>
+					</div><!-- .recent-posts-extended-text-wrap -->
+				</div><!-- .recent-posts-extended-item -->
+				<?php } } ?>
+			</div><!-- .recent-posts-extended-widget -->
+		</aside>
+		
+		<aside id="media_gallery-2" class="widget widget_media_gallery">
+			<div class="widget-title-wrap"><h2 class="widget-title">圖文推薦</h2></div>
+			<div id='gallery-1' class='gallery galleryid-64 gallery-columns-3 gallery-size-thumbnail'><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post6/'><img width="150" height="150" src="images/post6-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post10-2/'><img width="150" height="150" src="images/post10-1-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post5-2/'><img width="150" height="150" src="images/post5-1-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post14/'><img width="150" height="150" src="images/post14-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post13/'><img width="150" height="150" src="images/post13-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post28/'><img width="150" height="150" src="images/post28-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure>
+			</div>
+		</aside>
+			
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+			<div class="widget-title-wrap"><h2 class="widget-title">猜你喜歡</h2></div>
+			<ul><?php if ($relate_zuixin_list) { foreach ($relate_zuixin_list as $v) { ?>
+			<li><a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a></li>
+			<?php } } ?></ul>
+		</aside>
+	</div> <!-- .sidebar-widget-wrapper -->
+</div><!-- #sidebar-primary -->
+
+		    </div><!-- .inner-wrapper -->
+		    </div><!-- .container -->
+		    		</div><!-- #content -->
+{include file="common/footer_widgets"/}
+{include file="common/footer"/}
+</div><!-- #page -->
+{include file="common/footer_load"/}
+<script>
+$(function(){
+    var ajaxload  = false;
+    var maxpage   = false;
+    var startpage = 1;
+    var totalpage = <?php echo $totalpage; ?>;
+    
+    var tmp_url   = window.location.href;
+    msg = tmp_url.split("#");
+    tmp_url = msg[0];
+    
+    $(window).scroll(function ()
+    {
+        var listheight = $("#arclist").outerHeight(); 
+        
+        if ($(document).scrollTop() + $(window).height() >= listheight) {
+            if (startpage >= totalpage) {
+                //$("#submit_bt_one").html("已是最后一页，没有更多数据");
+                return false;
+            }
+            
+            if (!ajaxload && !maxpage) {
+                ajaxload = true;
+                //$("#submit_bt_one").html("努力加载中...");
+                var url = tmp_url;
+                var nextpage = startpage + 1;
+                
+                $.get(url,{page_ajax:1,page:nextpage}, function(res)
+                {
+                    if (res) {
+                        $("#arclist").append(res);
+                        startpage++;
+                        
+                        if (startpage >= totalpage) {
+                            maxpage = true;
+                            //$("#submit_bt_one").html("已是最后一页，没有更多数据");
+                            $("#arclist").append('<div style="text-align:center;padding:20px;">暂无记录</div>');
+                        } else {
+                            //$("#submit_bt_one").html("点击加载更多");
+                        }
+                        
+                        ajaxload = false;
+                    } else {
+                        //$("#submit_bt_one").html("请求失败，请稍后再试");
+                        ajaxload = false;
+                    }
+                },'json');
+            }
+        }
+    });
+});
+</script>
+</body></html>

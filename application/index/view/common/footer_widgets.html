@@ -1,0 +1,54 @@
+<div id="footer-widgets" class="widget-area" role="complementary">
+	<div class="container">
+		<div class="inner-wrapper">
+			<div class="widget-column footer-active-3">
+				<aside id="text-2" class="widget widget_text">
+					<h3 class="widget-title">關於我們</h3>
+					<div class="textwidget"><p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut voluptatem. Et dolores provident omnis consequatur veritatis vel…</p></div>
+				</aside>
+				<aside id="start-magazine-social-3" class="widget start_magazine_widget_social">
+					<h3 class="widget-title">Follow Us</h3>
+					<ul id="menu-social-menu-2" class="menu">
+						<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-299"><a href="http://facebook.com"><span class="screen-reader-text">Facebook</span></a></li>
+						<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-300"><a href="http://twitter.com"><span class="screen-reader-text">Twitter</span></a></li>
+						<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-301"><a href="http://youtube.com"><span class="screen-reader-text">YouTube</span></a></li>
+						<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-302"><a href="https://plus.google.com"><span class="screen-reader-text">Plus Google</span></a></li>
+						<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-303"><a href="http://pinterest.com"><span class="screen-reader-text">Pinterest</span></a></li>
+					</ul>
+				</aside>
+			</div>
+			<div class="widget-column footer-active-3">
+				<aside id="recent-posts-2" class="widget widget_recent_entries">
+					<h3 class="widget-title">最新文章</h3>
+					<ul>
+					<?php $recent_posts = cache("recent_posts"); if ($recent_posts) { foreach ($recent_posts as $k=>$v) { if ($k < 6) { ?>
+						<li><a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a></li>
+					<?php } } } ?>
+					</ul>
+				</aside>
+			</div>
+			<div class="widget-column footer-active-3">
+				<aside id="start-magazine-recent-posts-extended-3" class="widget start_magazine_widget_recent_posts_extended">
+					<h3 class="widget-title">熱門文章</h3>						
+					<div class="recent-posts-extended-widget">
+						<?php $popular_posts = cache("popular_posts"); if ($popular_posts) { foreach ($popular_posts as $k=>$v) { if ($k >= 3 && $k < 6) { ?>
+						<div class="recent-posts-extended-item">
+							<div class="recent-posts-extended-thumb">
+								<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><img width="150" height="150" src="<?php echo $v['litpic']; ?>" class="alignleft wp-post-image" alt="<?php echo $v['title']; ?>" style="max-width:60px;" /></a>
+							</div>
+							<div class="recent-posts-extended-text-wrap">
+								<h3 class="recent-posts-extended-title">
+									<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a>
+								</h3>
+								<div class="recent-posts-extended-meta entry-meta">
+									<span class="posted-on"><?php echo date('Y-m-d', $v['update_time']); ?></span>
+								</div>
+							</div><!-- .recent-posts-extended-text-wrap -->
+						</div><!-- .recent-posts-extended-item -->
+						<?php } } } ?>
+					</div><!-- .recent-posts-extended-widget -->
+				</aside>
+			</div>
+		</div><!-- .inner-wrapper -->
+	</div><!-- .container -->
+</div><!-- #footer-widgets -->

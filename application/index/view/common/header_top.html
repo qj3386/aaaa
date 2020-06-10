@@ -1,0 +1,31 @@
+<div id="tophead">
+	<div class="container">
+		<div class="top-news">
+			<span class="top-news-title">快讯</span>
+			<div id="notice-ticker">
+				<div class="notice-inner-wrap">
+					<div class="breaking-news-list">
+					<?php $popular_posts = cache("popular_posts"); if ($popular_posts) { foreach ($popular_posts as $k=>$v) { if ($k < 3) { ?>
+						<div><a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a></div>
+					<?php } } } ?>
+					</div><!-- .breaking-news-list -->
+				</div> <!-- .notice-inner-wrap -->
+			</div><!-- #notice-ticker -->
+		</div> <!--.top-news -->
+		<div class="right-tophead">
+			<div id="time-display">
+				<span><?php echo date('Y-m-d'); ?></span>
+			</div><!-- #time-display -->
+			<div id="header-social">
+				<div class="widget start_magazine_widget_social">
+					<ul id="menu-social-menu" class="menu"><li id="menu-item-299" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-299"><a href="http://facebook.com"><span class="screen-reader-text">Facebook</span></a></li>
+					<li id="menu-item-300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-300"><a href="http://twitter.com"><span class="screen-reader-text">Twitter</span></a></li>
+					<li id="menu-item-301" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-301"><a href="http://youtube.com"><span class="screen-reader-text">YouTube</span></a></li>
+					<li id="menu-item-302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-302"><a href="https://plus.google.com"><span class="screen-reader-text">Plus Google</span></a></li>
+					<li id="menu-item-303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-303"><a href="http://pinterest.com"><span class="screen-reader-text">Pinterest</span></a></li>
+					</ul>
+				</div>
+			</div><!-- .header-social -->
+		</div><!-- .right-head -->
+	</div> <!-- .container -->
+</div><!-- #tophead -->

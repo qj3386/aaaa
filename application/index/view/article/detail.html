@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php if ($post['seotitle']) { echo $post['seotitle']; } else { echo $post['title']; echo '-'.sysconfig('CMS_WEBNAME'); } ?></title>
+<meta name="keywords" content="<?php echo $post["keywords"]; ?>" />
+<meta name="description" content="<?php echo $post["description"]; ?>" />
+<link rel="stylesheet" href="/css/style.min.css" type="text/css" media="all" />
+<link rel="stylesheet" id="font-awesome-css" href="/plugin/font-awesome/css/all.min.css?ver=5.1.1" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery-sidr-css" href="/plugin/sidr/css/jquery.sidr.dark.min.css?ver=2.2.1" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery-slick-css" href="/plugin/slick/slick.min.css?ver=1.5.9" type="text/css" media="all" />
+<link rel="stylesheet" id="start-magazine-style-css" href="/css/style.css?ver=2.0.1" type="text/css" media="all" />
+<script type="text/javascript" src="/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+<script type="text/javascript" src="/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+</head>
+
+<body class="post-template-default single single-post single-format-standard global-layout-right-sidebar header-ads-enabled">
+{include file="common/header_top"/}
+<div id="page" class="hfeed site">
+{include file="common/header"/}
+<div id="content" class="site-content">
+	<div class="container">
+		<div class="inner-wrapper">
+		    	
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<article class="post type-post status-publish format-standard has-post-thumbnail hentry category-business category-technology">
+				<div class="article-wrapper">
+					<header class="entry-header">
+						<h1 class="entry-title"><?php echo $post["title"]; ?></h1>
+						<div class="entry-meta">
+							<span class="posted-on"><time class="entry-date published updated"><?php echo date("Y-m-d", $post['update_time']); ?></time></span>
+							<span class="cat-links"><a href="/articlelist/f<?php echo $post['type_id']; ?>" rel="category"><?php echo $post["type_name_text"]; ?></a></span>
+							<?php if ($post['writer'] || $post['source']) { ?><span class="byline"><?php if ($post['writer']) { ?><a href="{:url('search/detail')}?writer=<?php echo $post['writer']; ?>"><?php echo $post['writer']; ?></a>, <?php } ?><?php if ($post['source']) { ?><a href="{:url('search/detail')}?source=<?php echo $post['source']; ?>"><?php echo $post['source']; ?></a><?php } ?></span><?php } ?>
+						</div><!-- .entry-meta -->
+					</header><!-- .entry-header -->
+
+					<div class="entry-content"><?php echo $post["content"]; ?></div><!-- .entry-content -->
+				</div> <!-- .article-wrapper -->
+			</article><!-- #post-## -->
+			
+			<div class="related-posts-wrapper related-posts-column-3">
+				<h4>相關推薦</h4>
+				<div class="inner-wrapper">
+					<?php if ($relate_rand_list) { foreach ($relate_rand_list as $v) { ?>
+					<div class="related-posts-item">
+						<?php if (!empty($v['litpic'])) { ?>
+						<div class="related-posts-thumb">
+							<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><img width="300" height="225" src="<?php echo $v['litpic']; ?>" class="aligncenter wp-post-image" alt="<?php echo $v['title']; ?>" /></a>
+						</div>
+						<?php } ?>
+						<div class="related-posts-text-wrap">
+							<div class="related-posts-meta entry-meta">
+								<span class="posted-on"><?php echo date('Y-m-d', $v['update_time']); ?></span>
+								<span class="comments-link"><?php echo $v['click']; ?></span>
+							</div><!-- .related-posts-meta -->
+							<h3 class="related-posts-title">
+								<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a>
+							</h3>
+						</div><!-- .related-posts-text-wrap -->
+					</div><!-- .related-posts-item -->
+					<?php } } ?>
+				</div><!-- .inner-wrapper -->
+			</div><!-- .related-posts-wrapper -->
+
+			<div class="related-posts-wrapper related-posts-column-3">
+				<h4>猜你喜歡</h4>
+				<div class="inner-wrapper">
+					<?php if ($relate_rand_list) { foreach ($relate_rand_list as $v) { ?>
+					<div class="related-posts-item">
+						<?php if (!empty($v['litpic'])) { ?>
+						<div class="related-posts-thumb">
+							<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><img width="300" height="225" src="<?php echo $v['litpic']; ?>" class="aligncenter wp-post-image" alt="<?php echo $v['title']; ?>" /></a>
+						</div>
+						<?php } ?>
+						<div class="related-posts-text-wrap">
+							<div class="related-posts-meta entry-meta">
+								<span class="posted-on"><?php echo date('Y-m-d', $v['update_time']); ?></span>
+								<span class="comments-link"><?php echo $v['click']; ?></span>
+							</div><!-- .related-posts-meta -->
+							<h3 class="related-posts-title">
+								<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a>
+							</h3>
+						</div><!-- .related-posts-text-wrap -->
+					</div><!-- .related-posts-item -->
+					<?php } } ?>
+				</div><!-- .inner-wrapper -->
+			</div><!-- .related-posts-wrapper -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<div id="sidebar-primary" class="widget-area sidebar" role="complementary">
+	<div class="sidebar-widget-wrapper">
+		<aside id="start-magazine-recent-posts-extended-2" class="widget start_magazine_widget_recent_posts_extended">
+			<div class="widget-title-wrap"><h2 class="widget-title">大家正在關注</h2></div>						
+			<div class="recent-posts-extended-widget">
+				<?php if ($relate_zuixin_list) { foreach ($relate_zuixin_list as $v) { ?>
+				<div class="recent-posts-extended-item">
+					<div class="recent-posts-extended-thumb">
+						<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>">
+							<img width="150" height="150" src="<?php echo $v['litpic']; ?>" class="alignleft wp-post-image" alt="" style="max-width:90px;" /></a>
+					</div>
+					<div class="recent-posts-extended-text-wrap">
+						<h3 class="recent-posts-extended-title">
+							<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a>
+						</h3>
+						<div class="recent-posts-extended-meta entry-meta">
+							<span class="posted-on"><?php echo date('Y-m-d', $v['update_time']); ?></span>
+						</div>
+					</div><!-- .recent-posts-extended-text-wrap -->
+				</div><!-- .recent-posts-extended-item -->
+				<?php } } ?>
+			</div><!-- .recent-posts-extended-widget -->
+		</aside>
+			
+		<aside id="media_gallery-2" class="widget widget_media_gallery">
+			<div class="widget-title-wrap"><h2 class="widget-title">圖文推薦</h2></div>
+			<div id='gallery-1' class='gallery galleryid-64 gallery-columns-3 gallery-size-thumbnail'><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post6/'><img width="150" height="150" src="images/post6-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post10-2/'><img width="150" height="150" src="images/post10-1-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post5-2/'><img width="150" height="150" src="images/post5-1-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post14/'><img width="150" height="150" src="images/post14-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post13/'><img width="150" height="150" src="images/post13-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure><figure class='gallery-item'>
+				<div class='gallery-icon landscape'>
+					<a href='https://demo.axlethemes.com/start-magazine/post28/'><img width="150" height="150" src="images/post28-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+				</div></figure>
+			</div>
+		</aside>
+			
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+			<div class="widget-title-wrap"><h2 class="widget-title">最新文章</h2></div>
+			<ul><?php if ($relate_zuixin_list) { foreach ($relate_zuixin_list as $v) { ?>
+			<li><a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a></li>
+			<?php } } ?></ul>
+		</aside>
+		</div> <!-- .sidebar-widget-wrapper -->
+</div><!-- #sidebar-primary -->
+		    </div><!-- .inner-wrapper -->
+		    </div><!-- .container -->
+		    		</div><!-- #content -->
+{include file="common/footer_widgets"/}
+{include file="common/footer"/}
+</div><!-- #page -->
+{include file="common/footer_load"/}
+</body></html>

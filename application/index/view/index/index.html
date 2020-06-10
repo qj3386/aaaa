@@ -1,0 +1,798 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo sysconfig('CMS_SEOTITLE'); ?></title>
+<meta name="keywords" content="<?php echo sysconfig('CMS_KEYWORDS'); ?>" />
+<meta name="description" content="<?php echo sysconfig('CMS_DESCRIPTION'); ?>" />
+<link rel="stylesheet" href="/css/style.min.css" type="text/css" media="all" />
+<link rel="stylesheet" id="font-awesome-css" href="/plugin/font-awesome/css/all.min.css?ver=5.1.1" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery-sidr-css" href="/plugin/sidr/css/jquery.sidr.dark.min.css?ver=2.2.1" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery-slick-css" href="/plugin/slick/slick.min.css?ver=1.5.9" type="text/css" media="all" />
+<link rel="stylesheet" id="start-magazine-style-css" href="/css/style.css?ver=2.0.1" type="text/css" media="all" />
+<script type="text/javascript" src="/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+<script type="text/javascript" src="/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+</head>
+
+<body class="home page-template page-template-templates page-template-magazine page-template-templatesmagazine-php page global-layout-right-sidebar header-ads-enabled">
+{include file="common/header_top"/}
+<div id="page" class="hfeed site">
+{include file="common/header"/}
+
+		<div id="sidebar-front-page-widget-area-top" class="widget-area"><div class="container">
+
+			<aside id="start-magazine-posts-slider-2" class="widget start_magazine_widget_posts_slider">
+				<div class="inner-wrapper">
+					<div class="posts-slider">
+						<div class="cycle-slideshow" data-cycle-slides="article" data-cycle-auto-height="container" data-pager-template='<span class="pager-box"></span>'>
+							<div class="cycle-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+							<div class="cycle-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>												
+							<?php if($slide_list){ ?>
+							<?php foreach($slide_list as $k=>$v){ ?>
+							<article class="first">
+								<img width="600" height="400" src="<?php echo $v['pic']; ?>" class="attachment-start-magazine-featured size-start-magazine-featured wp-post-image" alt="" />
+								<div class="slide-caption">
+									<p><?php echo $v['title']; ?></p>
+								</div><!-- .slide-caption -->
+							</article>
+							<?php } ?><?php } ?>
+							<div class="cycle-pager"></div>
+						</div><!-- .cycle-slideshow -->
+					</div><!-- .posts-slider -->
+
+					<div class="recent-posts-list">
+						<div class="recent-posts-list-extended">
+							<?php if ($relate_tuijian_list) { foreach ($relate_tuijian_list as $v) { ?>
+							<div class="recent-posts-list-extended-item">
+								<div class="recent-posts-list-extended-thumb">
+									<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>">
+										<img width="150" height="150" src="<?php echo $v['litpic']; ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" />
+									</a>
+								</div><!-- .recent-posts-list-extended-thumb -->
+								<div class="recent-posts-list-extended-text-wrap">
+									<h3 class="recent-posts-list-extended-title">
+										<a href="<?php echo model('Article')->getArticleDetailUrl(array('id'=>$v['id'])); ?>"><?php echo $v['title']; ?></a>
+									</h3>
+									<div class="recent-posts-list-extended-meta entry-meta">
+										<span class="posted-on"><?php echo date("m-d H:i", $v['update_time']); ?></span>
+									</div>
+								</div><!-- .recent-posts-list-extended-text-wrap -->
+							</div><!-- .recent-posts-list-extended-item -->
+							<?php } } ?>
+						</div><!-- .recent-posts-list-extended -->
+					</div><!-- .recent-posts-list -->
+				</div><!-- .inner-wrapper -->
+			</aside>
+
+
+			<aside id="start-magazine-news-block-2" class="widget start_magazine_widget_news_block"><div class="widget-title-wrap"><h2 class="widget-title">POPULAR NEWS</h2></div>			
+				<div class="news-block-widget news-block-layout-2 news-block-column-3">
+					<div class="inner-wrapper">
+						<div class="news-block-item">
+							<div class="news-block-wrapper">
+								<div class="news-block-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">
+										<img width="400" height="250" src="images/post14-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post14-400x250.jpg 400w, images/post14-300x188.jpg 300w, images/post14-768x480.jpg 768w, images/post14.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />
+									</a>
+									<span class="news-categories"><a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+								</div><!-- .news-block-thumb -->
+								<div class="news-block-text-wrap">
+									<div class="news-block-meta entry-meta">
+									<span class="posted-on">July 24, 2018</span>
+									<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/#respond">0</a></span>										</div><!-- .news-block-meta -->
+									<h3 class="news-block-title">
+										<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+									</h3>
+									<div class="news-block-summary">
+										<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+									</div><!-- .news-block-summary -->
+								</div><!-- .news-block-text-wrap -->
+							</div><!-- .news-block-wrapper -->
+						</div><!-- .news-block-item -->
+
+						<div class="news-block-item">
+							<div class="news-block-wrapper">
+								<div class="news-block-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">
+										<img width="400" height="250" src="images/post5-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post5-1-400x250.jpg 400w, images/post5-1-300x188.jpg 300w, images/post5-1-768x480.jpg 768w, images/post5-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />
+									</a>
+									<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+								</div><!-- .news-block-thumb -->
+								<div class="news-block-text-wrap">
+									<div class="news-block-meta entry-meta">
+										<span class="posted-on">July 24, 2018</span>
+										<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/#respond">0</a></span>
+									</div><!-- .news-block-meta -->
+									<h3 class="news-block-title">
+										<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+									</h3>
+									<div class="news-block-summary">
+										<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+									</div><!-- .news-block-summary -->
+								</div><!-- .news-block-text-wrap -->
+							</div><!-- .news-block-wrapper -->
+						</div><!-- .news-block-item -->
+
+						<div class="news-block-item">
+							<div class="news-block-wrapper">
+								<div class="news-block-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">
+										<img width="400" height="250" src="images/post10-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post10-1-400x250.jpg 400w, images/post10-1-300x188.jpg 300w, images/post10-1-768x480.jpg 768w, images/post10-1-1024x640.jpg 1024w, images/post10-1.jpg 1280w" sizes="(max-width: 400px) 100vw, 400px" />
+									</a>
+									<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+								</div><!-- .news-block-thumb -->
+								<div class="news-block-text-wrap">
+									<div class="news-block-meta entry-meta">
+										<span class="posted-on">July 24, 2018</span>
+										<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/#respond">0</a></span>
+									</div><!-- .news-block-meta -->
+									<h3 class="news-block-title">
+										<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">A satisfied customer is the best business strategy of all.</a>
+									</h3>
+									<div class="news-block-summary">
+										<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+									</div><!-- .news-block-summary -->
+								</div><!-- .news-block-text-wrap -->
+							</div><!-- .news-block-wrapper -->
+						</div><!-- .news-block-item -->
+					</div><!-- .inner-wrapper -->
+				</div><!-- .news-block-widget -->
+			</aside>
+			
+			<aside id="start-magazine-news-block-5" class="widget start_magazine_widget_news_block"><div class="widget-title-wrap"><h2 class="widget-title">HEADLINES</h2></div>			
+				<div class="news-block-widget news-block-layout-1 news-block-column-2">
+
+					<div class="inner-wrapper">
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">
+												<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+										</h3>
+
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">
+												<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+										</h3>
+
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">
+												<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-1024x640.jpg 1024w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-1200x750.jpg 1200w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1.jpg 1280w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">A satisfied customer is the best business strategy of all.</a>
+										</h3>
+
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2017/06/16/ideas-pull-the-trigger-but-instinct-loads-the-gun/">
+												<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/uncategorized/">Uncategorized</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">June 16, 2017</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2017/06/16/ideas-pull-the-trigger-but-instinct-loads-the-gun/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2017/06/16/ideas-pull-the-trigger-but-instinct-loads-the-gun/">Ideas pull the trigger, but instinct loads the gun.</a>
+										</h3>
+
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+					</div><!-- .inner-wrapper -->
+				</div><!-- .news-block-widget -->
+			</aside>
+			
+			
+			<aside id="start-magazine-news-block-6" class="widget start_magazine_widget_news_block"><div class="widget-title-wrap"><h2 class="widget-title">HERITAGE</h2></div>			
+				<div class="news-block-widget news-block-layout-2 news-block-column-4">
+					<div class="inner-wrapper">
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+									<div class="news-block-thumb">
+										<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">
+											<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post14.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />
+										</a>
+										<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/recent-news/">Recent News</a></span>
+									</div><!-- .news-block-thumb -->
+									<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+										</h3>
+										<div class="news-block-summary">
+											<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+										</div><!-- .news-block-summary -->
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">
+												<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post5-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">
+												<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-1024x640.jpg 1024w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1-1200x750.jpg 1200w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post10-1.jpg 1280w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">A satisfied customer is the best business strategy of all.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2017/06/16/ideas-pull-the-trigger-but-instinct-loads-the-gun/">
+												<img width="400" height="250" src="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-400x250.jpg 400w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-300x188.jpg 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1-768x480.jpg 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2017/06/post15-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="widget-category news-categories"> <a href="https://demo.axlethemes.com/start-magazine-pro/category/uncategorized/">Uncategorized</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">June 16, 2017</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine-pro/2017/06/16/ideas-pull-the-trigger-but-instinct-loads-the-gun/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine-pro/2017/06/16/ideas-pull-the-trigger-but-instinct-loads-the-gun/">Ideas pull the trigger, but instinct loads the gun.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+					</div><!-- .inner-wrapper -->
+				</div><!-- .news-block-widget -->
+			</aside>
+			
+			
+			</div></div><!-- #sidebar-front-page-widget-area-top -->		<div id="content" class="site-content">
+		<div class="container">
+	<div class="inner-wrapper">
+		
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			<div id="sidebar-front-page-widget-area" class="widget-area">
+			
+			<aside id="start-magazine-news-block-3" class="widget start_magazine_widget_news_block"><div class="widget-title-wrap"><h2 class="widget-title">BUSINESS</h2></div>			
+				<div class="news-block-widget news-block-layout-1 news-block-column-1">
+
+					<div class="inner-wrapper">
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">
+												<img width="400" height="250" src="images/post14-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post14-400x250.jpg 400w, images/post14-300x188.jpg 300w, images/post14-768x480.jpg 768w, images/post14.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut voluptatem. Et dolores provident omnis consequatur veritatis vel&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">
+												<img width="400" height="250" src="images/post5-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post5-1-400x250.jpg 400w, images/post5-1-300x188.jpg 300w, images/post5-1-768x480.jpg 768w, images/post5-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut voluptatem. Et dolores provident omnis consequatur veritatis vel&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+					</div><!-- .inner-wrapper -->
+				</div><!-- .news-block-widget -->
+				</aside>
+				
+				
+				<aside id="start-magazine-news-block-4" class="widget start_magazine_widget_news_block"><div class="widget-title-wrap"><h2 class="widget-title">THE WORLD</h2></div>			
+				<div class="news-block-widget news-block-layout-2 news-block-column-2">
+
+					<div class="inner-wrapper">
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">
+												<img width="400" height="250" src="images/post14-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post14-400x250.jpg 400w, images/post14-300x188.jpg 300w, images/post14-768x480.jpg 768w, images/post14.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">
+												<img width="400" height="250" src="images/post5-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post5-1-400x250.jpg 400w, images/post5-1-300x188.jpg 300w, images/post5-1-768x480.jpg 768w, images/post5-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">
+												<img width="400" height="250" src="images/post10-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post10-1-400x250.jpg 400w, images/post10-1-300x188.jpg 300w, images/post10-1-768x480.jpg 768w, images/post10-1-1024x640.jpg 1024w, images/post10-1.jpg 1280w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">A satisfied customer is the best business strategy of all.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2017/06/16/dont-be-afraid-to-express-yourself-through-fashion/">
+												<img width="400" height="250" src="images/post13-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post13-400x250.jpg 400w, images/post13-300x188.jpg 300w, images/post13-768x480.jpg 768w, images/post13.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">June 16, 2017</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2017/06/16/dont-be-afraid-to-express-yourself-through-fashion/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2017/06/16/dont-be-afraid-to-express-yourself-through-fashion/">Don&#8217;t be afraid to express yourself through fashion!</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+					</div><!-- .inner-wrapper -->
+				</div><!-- .news-block-widget -->
+			</aside>
+			
+			
+			<aside id="start-magazine-news-block-4" class="widget start_magazine_widget_news_block">
+				<div class="widget-title-wrap"><h2 class="widget-title">Three Columns</h2></div>			
+				<div class="news-block-widget news-block-layout-2 news-block-column-3">
+
+					<div class="inner-wrapper">
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">
+												<img width="400" height="250" src="images/post14-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post14-400x250.jpg 400w, images/post14-300x188.jpg 300w, images/post14-768x480.jpg 768w, images/post14.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">
+												<img width="400" height="250" src="images/post5-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post5-1-400x250.jpg 400w, images/post5-1-300x188.jpg 300w, images/post5-1-768x480.jpg 768w, images/post5-1.jpg 800w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+
+						
+							<div class="news-block-item">
+								<div class="news-block-wrapper">
+																			<div class="news-block-thumb">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">
+												<img width="400" height="250" src="images/post10-1-400x250.jpg" class="aligncenter wp-post-image" alt="" srcset="images/post10-1-400x250.jpg 400w, images/post10-1-300x188.jpg 300w, images/post10-1-768x480.jpg 768w, images/post10-1-1024x640.jpg 1024w, images/post10-1.jpg 1280w" sizes="(max-width: 400px) 100vw, 400px" />											</a>
+																																		<span class="news-categories"> <a href="https://demo.axlethemes.com/start-magazine/category/recent-news/">Recent News</a></span>
+																					</div><!-- .news-block-thumb -->
+
+																		<div class="news-block-text-wrap">
+										<div class="news-block-meta entry-meta">
+											<span class="posted-on">July 24, 2018</span>
+											<span class="comments-link"><a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/#respond">0</a></span>										</div><!-- .news-block-meta -->
+										<h3 class="news-block-title">
+											<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">A satisfied customer is the best business strategy of all.</a>
+										</h3>
+
+																					<div class="news-block-summary">
+												<p>Amet eius officiis autem autem impedit at sit. Quae laudantium totam aut&hellip;</p>
+											</div><!-- .news-block-summary -->
+										
+									</div><!-- .news-block-text-wrap -->
+								</div><!-- .news-block-wrapper -->
+							</div><!-- .news-block-item -->
+					</div><!-- .inner-wrapper -->
+				</div><!-- .news-block-widget -->
+			</aside>
+			
+			
+			</div><!-- #sidebar-front-page-widget-area -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+<div id="sidebar-primary" class="widget-area sidebar" role="complementary">
+	<div class="sidebar-widget-wrapper">
+					<aside id="start-magazine-recent-posts-extended-2" class="widget start_magazine_widget_recent_posts_extended"><div class="widget-title-wrap"><h2 class="widget-title">HEADLINES</h2></div>						
+				<div class="recent-posts-extended-widget">
+
+											<div class="recent-posts-extended-item">
+
+															<div class="recent-posts-extended-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">
+										<img width="150" height="150" src="images/post14-150x150.jpg" class="alignleft wp-post-image" alt="" style="max-width:90px;" />									</a>
+								</div>
+														<div class="recent-posts-extended-text-wrap">
+								<h3 class="recent-posts-extended-title">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+								</h3>
+
+																	<div class="recent-posts-extended-meta entry-meta">
+										<span class="posted-on">July 24, 2018</span>
+									</div>
+								
+							</div><!-- .recent-posts-extended-text-wrap -->
+
+						</div><!-- .recent-posts-extended-item -->
+											<div class="recent-posts-extended-item">
+
+															<div class="recent-posts-extended-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">
+										<img width="150" height="150" src="images/post5-1-150x150.jpg" class="alignleft wp-post-image" alt="" style="max-width:90px;" />									</a>
+								</div>
+														<div class="recent-posts-extended-text-wrap">
+								<h3 class="recent-posts-extended-title">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+								</h3>
+
+																	<div class="recent-posts-extended-meta entry-meta">
+										<span class="posted-on">July 24, 2018</span>
+									</div>
+								
+							</div><!-- .recent-posts-extended-text-wrap -->
+
+						</div><!-- .recent-posts-extended-item -->
+											<div class="recent-posts-extended-item">
+
+															<div class="recent-posts-extended-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">
+										<img width="150" height="150" src="images/post10-1-150x150.jpg" class="alignleft wp-post-image" alt="" style="max-width:90px;" />									</a>
+								</div>
+														<div class="recent-posts-extended-text-wrap">
+								<h3 class="recent-posts-extended-title">
+									<a href="https://demo.axlethemes.com/start-magazine/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">A satisfied customer is the best business strategy of all.</a>
+								</h3>
+
+																	<div class="recent-posts-extended-meta entry-meta">
+										<span class="posted-on">July 24, 2018</span>
+									</div>
+								
+							</div><!-- .recent-posts-extended-text-wrap -->
+
+						</div><!-- .recent-posts-extended-item -->
+											<div class="recent-posts-extended-item">
+
+															<div class="recent-posts-extended-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2017/06/16/dont-be-afraid-to-express-yourself-through-fashion/">
+										<img width="150" height="150" src="images/post13-150x150.jpg" class="alignleft wp-post-image" alt="" style="max-width:90px;" />									</a>
+								</div>
+														<div class="recent-posts-extended-text-wrap">
+								<h3 class="recent-posts-extended-title">
+									<a href="https://demo.axlethemes.com/start-magazine/2017/06/16/dont-be-afraid-to-express-yourself-through-fashion/">Don&#8217;t be afraid to express yourself through fashion!</a>
+								</h3>
+
+																	<div class="recent-posts-extended-meta entry-meta">
+										<span class="posted-on">June 16, 2017</span>
+									</div>
+								
+							</div><!-- .recent-posts-extended-text-wrap -->
+
+						</div><!-- .recent-posts-extended-item -->
+											<div class="recent-posts-extended-item">
+
+															<div class="recent-posts-extended-thumb">
+									<a href="https://demo.axlethemes.com/start-magazine/2017/06/16/fugiat-amet-sit-rerum-consequuntur-officiis-error-itaque-voluptatum/">
+										<img width="150" height="150" src="images/post11-150x150.jpg" class="alignleft wp-post-image" alt="" style="max-width:90px;" />									</a>
+								</div>
+														<div class="recent-posts-extended-text-wrap">
+								<h3 class="recent-posts-extended-title">
+									<a href="https://demo.axlethemes.com/start-magazine/2017/06/16/fugiat-amet-sit-rerum-consequuntur-officiis-error-itaque-voluptatum/">Fugiat amet sit rerum consequuntur officiis</a>
+								</h3>
+
+																	<div class="recent-posts-extended-meta entry-meta">
+										<span class="posted-on">June 16, 2017</span>
+									</div>
+								
+							</div><!-- .recent-posts-extended-text-wrap -->
+
+						</div><!-- .recent-posts-extended-item -->
+					
+				</div><!-- .recent-posts-extended-widget -->
+
+				
+			
+			</aside>
+			
+			
+			<aside id="recent-posts-2" class="widget widget_recent_entries">		<div class="widget-title-wrap"><h2 class="widget-title">Recent Posts</h2></div><ul>
+				<li><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/if-you-worried-about-falling-off-the-bike-youd-never-get-on/">If you worried about falling off the bike, you&#8217;d never get on.</a>
+				</li>
+				<li><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/photography-is-my-passion-whenever-i-get-time-i-click/">Photography is my passion. Whenever I get time, I click.</a>
+				</li>
+				<li><a href="https://demo.axlethemes.com/start-magazine-pro/2018/07/24/a-satisfied-customer-is-the-best-business-strategy-of-all/">A satisfied customer is the best business strategy of all.</a>
+				</li>
+				<li><a href="https://demo.axlethemes.com/start-magazine-pro/2017/06/16/ideas-pull-the-trigger-but-instinct-loads-the-gun/">Ideas pull the trigger, but instinct loads the gun.</a>
+				</li>
+			</ul></aside>
+			
+			<aside id="media_image-2" class="widget widget_media_image"><div class="widget-title-wrap"><h2 class="widget-title">CORPORATE THEME</h2></div><a href="https://axlethemes.com/downloads/corporate-club-pro/"><img width="768" height="648" src="images/corporate-club-pro-features-768x648.png" class="image wp-image-330 attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2018/08/corporate-club-pro-features-768x648.png 768w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2018/08/corporate-club-pro-features-768x648-300x253.png 300w, https://demo.axlethemes.com/start-magazine-pro/wp-content/uploads/sites/31/2018/08/corporate-club-pro-features-768x648-356x300.png 356w" sizes="(max-width: 768px) 100vw, 768px" /></a></aside>
+			
+			<aside id="search-2" class="widget widget_search">
+				<div class="widget-title-wrap"><h2 class="widget-title">搜索</h2></div>
+				<form role="search" method="get" class="search-form" action="{:url('search/detail')}">
+					<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input autocomplete="off" type="search" name="keyword" class="search-field" placeholder="搜索&hellip;" value="" />
+					</label>
+					<input type="submit" class="search-submit" value="&#xf002;" />
+				</form>
+			</aside>
+			
+
+			<aside id="media_gallery-2" class="widget widget_media_gallery">
+				<div class="widget-title-wrap"><h2 class="widget-title">Gallery</h2></div>
+				<div id='gallery-1' class='gallery galleryid-8 gallery-columns-3 gallery-size-thumbnail'>
+					<figure class='gallery-item'>
+					<div class='gallery-icon landscape'>
+						<a href='https://demo.axlethemes.com/start-magazine/post6/'><img width="150" height="150" src="images/post6-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+					</div></figure>
+					<figure class='gallery-item'>
+					<div class='gallery-icon landscape'>
+						<a href='https://demo.axlethemes.com/start-magazine/post10-2/'><img width="150" height="150" src="images/post10-1-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+					</div></figure><figure class='gallery-item'>
+					<div class='gallery-icon landscape'>
+						<a href='https://demo.axlethemes.com/start-magazine/post5-2/'><img width="150" height="150" src="images/post5-1-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+					</div></figure><figure class='gallery-item'>
+					<div class='gallery-icon landscape'>
+						<a href='https://demo.axlethemes.com/start-magazine/post14/'><img width="150" height="150" src="images/post14-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+					</div></figure><figure class='gallery-item'>
+					<div class='gallery-icon landscape'>
+						<a href='https://demo.axlethemes.com/start-magazine/post13/'><img width="150" height="150" src="images/post13-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+					</div></figure><figure class='gallery-item'>
+					<div class='gallery-icon landscape'>
+						<a href='https://demo.axlethemes.com/start-magazine/post28/'><img width="150" height="150" src="images/post28-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
+					</div></figure>
+				</div>
+			</aside>
+
+
+			<aside id="tag_cloud-2" class="widget widget_tag_cloud">
+				<div class="widget-title-wrap"><h2 class="widget-title">熱門分類</h2></div>
+				<div class="tagcloud">
+					<a href="https://demo.axlethemes.com/magazine-point/category/business/" class="tag-cloud-link tag-link-2 tag-link-position-1" style="font-size: 22pt;" aria-label="Business (5 items)">Business</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/economy/" class="tag-cloud-link tag-link-3 tag-link-position-2" style="font-size: 8pt;" aria-label="Economy (1 item)">Economy</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/editor/" class="tag-cloud-link tag-link-4 tag-link-position-3" style="font-size: 8pt;" aria-label="Editor (1 item)">Editor</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/entertainment/" class="tag-cloud-link tag-link-5 tag-link-position-4" style="font-size: 13.25pt;" aria-label="Entertainment (2 items)">Entertainment</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/fashion/" class="tag-cloud-link tag-link-6 tag-link-position-5" style="font-size: 22pt;" aria-label="Fashion (5 items)">Fashion</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/healths/" class="tag-cloud-link tag-link-7 tag-link-position-6" style="font-size: 8pt;" aria-label="Healths (1 item)">Healths</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/news/" class="tag-cloud-link tag-link-8 tag-link-position-7" style="font-size: 19.666666666667pt;" aria-label="News (4 items)">News</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/politics/" class="tag-cloud-link tag-link-9 tag-link-position-8" style="font-size: 8pt;" aria-label="Politics (1 item)">Politics</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/recent-news/" class="tag-cloud-link tag-link-10 tag-link-position-9" style="font-size: 16.75pt;" aria-label="Recent News (3 items)">Recent News</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/technology/" class="tag-cloud-link tag-link-11 tag-link-position-10" style="font-size: 22pt;" aria-label="Technology (5 items)">Technology</a>
+					<a href="https://demo.axlethemes.com/magazine-point/category/world-news/" class="tag-cloud-link tag-link-12 tag-link-position-11" style="font-size: 22pt;" aria-label="World News (5 items)">World News</a>
+				</div>
+			</aside>
+		</div> <!-- .sidebar-widget-wrapper -->
+</div><!-- #sidebar-primary -->
+
+		    </div><!-- .inner-wrapper -->
+		    </div><!-- .container -->
+		    		</div><!-- #content -->
+{include file="common/footer_widgets"/}
+{include file="common/footer"/}
+</div><!-- #page -->
+{include file="common/footer_load"/}
+</body></html>
